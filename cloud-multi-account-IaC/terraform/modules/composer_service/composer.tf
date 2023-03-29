@@ -1,7 +1,8 @@
 locals {
+  # NOTE: Needed for GCP custom keys
   kms_keyring = coalesce(var.kms_keyring, "${var.service_name}-${var.stage}-keyring")
-  kms_key = coalesce(var.kms_key, "${var.stage}-cpsoi-${var.service_number}-${var.service_name}-storage-key")
-  cpsoi_mgt_key_path = "projects/vf-grp-cpsa-mgt-cpsoi-01/locations/${var.region}/keyRings/${local.kms_keyring}/cryptoKeys/${local.kms_key}"
+  kms_key = coalesce(var.kms_key, "${var.stage}-myteam-${var.service_number}-${var.service_name}-storage-key")
+  cpsoi_mgt_key_path = "projects/mgmt-team/locations/${var.region}/keyRings/${local.kms_keyring}/cryptoKeys/${local.kms_key}"
 
   composer_related_sa = [
     "serviceAccount:service-${var.project_number}@cloudcomposer-accounts.iam.gserviceaccount.com",
