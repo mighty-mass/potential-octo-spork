@@ -1,2 +1,3 @@
-# potential-octo-spork
-A collection of some of my works
+# Portfolio
+
+A collection of some works I've done
